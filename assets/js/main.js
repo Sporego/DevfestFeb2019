@@ -9,7 +9,7 @@ function houdini() {
     x.style.display = "none";
   }
 }
-<<<<<<< HEAD
+
 function changeImage() {
   var x = prompt("This is a family photo: What's the key fam?");
   if (x == "correct") {
@@ -26,9 +26,6 @@ function changeImage2() {
       "http://disneyexaminer.com/wp-content/uploads/2016/11/disney-holiday-season-shopping-black-friday-gift-ideas-2016-star-wars-family-sleepwear-collection-wookie-bb-8-pajamas.jpg";
   }
 }
-=======
-
->>>>>>> 1fa3cc1c5d344c0d05f6a2cedf15988458d0652f
 //
 var surveyValueChanged = function(sender, options) {
   var el = document.getElementById(options.name);
@@ -61,10 +58,10 @@ var json = {
       name: "spirit",
       title: "Spirit Animal",
       choices: [
-        { value: "Charizard", imageLink: "./assets/img/charizard.png" },
-        { value: "Lion", imageLink: "./assets/img/lion.png" },
-        { value: "Sea turtle", imageLink: "./assets/img/sea-turtle.jpg" },
-        { value: "Tardigrade", imageLink: "./assets/img/tardigrade.jpg" }
+        { value: "charizard", imageLink: "./assets/img/charizard.png" },
+        { value: "lion", imageLink: "./assets/img/lion.png" },
+        { value: "sea turtle", imageLink: "./assets/img/sea-turtle.jpg" },
+        { value: "tardigrade", imageLink: "./assets/img/tardigrade.jpg" }
       ]
     },
 
@@ -74,16 +71,16 @@ var json = {
       title: "What quote is BS?",
       choices: [
         {
-          value: "item1",
+          value: "correct",
           text: '"I wanna live \'till I die, no more, no less."'
         },
         {
-          value: "item2",
+          value: "low",
           text:
-            '"If anyone slaps you on the right cheek turn your left cheek also."'
+            '"If anyone slaps you on the right cheek turn your left cheek also"'
         },
-        { value: "item3", text: '"Fish meat is practically a vegetable."' },
-        { value: "item4", text: '"You can\'t always get what you want."' }
+        { value: "high", text: '"Fish meat is practically a vegetable."' },
+        { value: "item1", text: '"You can\'t always get what you want."' }
       ]
     }
   ]
@@ -92,49 +89,8 @@ var json = {
 window.survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
-  var res = document.querySelector("#surveyResult");
-  res.setAttribute("style", "display: block");
-
-  //res.append("result: " + JSON.stringify(result.data));
-  if (result.data.tickle == "item1") {
-    var ans1 = "Yes";
-  } else {
-    var ans1 = "No";
-  }
-  document.querySelector("#q1").append(ans1);
-  if (result.data.cook == "item1") {
-    var ans2 = "Something on the grill";
-  } else if (result.data.cook == "item2") {
-    var ans2 = "Something in the oven";
-  } else if (result.data.cook == "item2") {
-    var ans2 = "Something in the microwave";
-  } else {
-    var ans2 = "Something on the stove";
-  }
-  document.querySelector("#q2").append(ans2);
-  document.querySelector("#q3").append(result.data.spirit);
-  if (result.data.quote == "item1") {
-<<<<<<< HEAD
-    var ans3 = '"I wanna live \'till I die, no more, no less."';
-  } else if (result.data.quote == "item2") {
-    var ans3 =
-      '"If anyone slaps you on the right cheek turn your left cheek also."';
-  } else if (result.data.quote == "item3") {
-    var ans3 = '"Fish meat is practically a vegetable."';
-  } else {
-    var ans3 = '"You can\'t always get what you want."';
-=======
-    var ans3 = '"I wanna live \'till I die, no more, no less. "';
-  } else if (result.data.quote == "item2") {
-    var ans3 =
-      '"If anyone slaps you on the right cheek turn your left cheek also. "';
-  } else if (result.data.quote == "item3") {
-    var ans3 = '"Fish meat is practically a vegetable. "';
-  } else {
-    var ans3 = '"You can\'t always get what you want. "';
->>>>>>> 1fa3cc1c5d344c0d05f6a2cedf15988458d0652f
-  }
-  document.querySelector("#q4").append(ans3);
+  document.querySelector("#surveyResult").innerHTML =
+    "result: " + JSON.stringify(result.data);
 });
 
 survey.data = {
