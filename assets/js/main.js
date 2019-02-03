@@ -43,16 +43,16 @@ var json = {
       name:"spirit",
       title:"Spirit Animal",
       choices:[
-        {value:"charizard",
+        {value:"Charizard",
         imageLink:"./assets/img/charizard.png"
         },
-        {value:"lion",
+        {value:"Lion",
         imageLink:"./assets/img/lion.png"
         },
-        {value:"sea turtle",
+        {value:"Sea turtle",
         imageLink:"./assets/img/sea-turtle.jpg"
         },
-        {value:"tardigrade",
+        {value:"Tardigrade",
         imageLink:"./assets/img/tardigrade.jpg"
         }
     ]},
@@ -61,10 +61,10 @@ var json = {
       type:"radiogroup",
       name:"quote",
       title:"What quote is BS?",
-      choices:[{value:"correct",text:"\"I wanna live 'till I die, no more, no less.\""},
-      {value:"low",text:"\"If anyone slaps you on the right cheek turn your left cheek also\""},
-      {value:"high",text:"\"Fish meat is practically a vegetable.\""},
-      {value:"item1",text:"\"You can't always get what you want.\""}]},
+      choices:[{value:"item1",text:"\"I wanna live 'till I die, no more, no less.\""},
+      {value:"item2",text:"\"If anyone slaps you on the right cheek turn your left cheek also.\""},
+      {value:"item3",text:"\"Fish meat is practically a vegetable.\""},
+      {value:"item4",text:"\"You can't always get what you want.\""}]},
   ]
 };
 
@@ -96,7 +96,19 @@ survey.onComplete.add(function(result) {
   }
   document.querySelector("#q2").append(ans2);
   document.querySelector("#q3").append(result.data.spirit);
-  document.querySelector("#q4").append(result.data.quote);
+  if(result.data.quote == "item1"){
+    var ans3 = '"I wanna live \'till I die, no more, no less."';
+  }
+  else if(result.data.quote == "item2"){
+    var ans3 = '"If anyone slaps you on the right cheek turn your left cheek also."';
+  }
+  else if(result.data.quote == "item3"){
+    var ans3 = '"Fish meat is practically a vegetable."';
+  }
+  else {
+    var ans3 = '"You can\'t always get what you want."';
+  }
+  document.querySelector("#q4").append(ans3);
 
 
 
