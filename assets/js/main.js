@@ -8,7 +8,7 @@ function houdini() {
   } else {
     x.style.display = "none";
   }
-}
+} 
 
 //
 var surveyValueChanged = function(sender, options) {
@@ -71,7 +71,13 @@ var json = {
 window.survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
-  document.querySelector("#surveyResult").innerHTML =
+  var table = $("<table>");
+  var headrow = $("<tr>").html("<th>Your answers</th><th>Their answers</th>");
+  table.append(headrow);
+
+  var row2 = $("<tr>").html("<td>"+result[0].choices.text+"</td>");
+
+  document.querySelector("#surveyResult").append =
     "result: " + JSON.stringify(result.data);
 });
 
