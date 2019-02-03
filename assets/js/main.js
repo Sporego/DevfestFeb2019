@@ -75,9 +75,26 @@ survey.onComplete.add(function(result) {
   res.setAttribute("style", "display: block");
 
   //res.append("result: " + JSON.stringify(result.data));
-    
-  document.querySelector("#q1").append(result.data.tickle);
-  document.querySelector("#q2").append(result.data.cook);
+  if(result.data.tickle == "item1"){
+    var ans1 = "Yes";
+  }  
+  else {
+    var ans1 = "No";
+  }
+  document.querySelector("#q1").append(ans1);
+  if(result.data.cook == "item1"){
+    var ans2 = "Something on the grill";
+  }
+  else if(result.data.cook == "item2"){
+    var ans2 = "Something in the oven";
+  }
+  else if(result.data.cook == "item2"){
+    var ans2 = "Something in the microwave";
+  }
+  else {
+    var ans2 = "Something on the stove"
+  }
+  document.querySelector("#q2").append(ans2);
   document.querySelector("#q3").append(result.data.spirit);
   document.querySelector("#q4").append(result.data.quote);
 
