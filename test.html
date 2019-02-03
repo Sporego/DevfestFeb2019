@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Example of setting and getting results into/from the survey, jQuery Survey Library Example</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://unpkg.com/jquery"></script>
-        <script src="https://surveyjs.azureedge.net/1.0.66/survey.jquery.js"></script>
-        <link href="https://surveyjs.azureedge.net/1.0.66/survey.css" type="text/css" rel="stylesheet"/>
-        <link rel="stylesheet" href="./index.css">
+  <head>
+    <title>
+      Example of setting and getting results into/from the survey, jQuery Survey
+      Library Example
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://surveyjs.azureedge.net/1.0.66/survey.jquery.js"></script>
+    <!-- CSS -->
+    <!-- <link
+      href="https://surveyjs.azureedge.net/1.0.66/survey.css"
+      type="text/css"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="surveyElement"></div>
+    <div id="surveyResult"></div>
 
-    </head>
-    <body>
-        <div id="surveyElement"></div>
-        <div id="surveyResult"></div>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
 
-        <script type="text/javascript" src="./index.js"></script>
-
-    </body>
-
-
-<script>
-var surveyValueChanged = function (sender, options) {
-    var el = document.getElementById(options.name);
-    if (el) {
+  <script>
+    var surveyValueChanged = function(sender, options) {
+      var el = document.getElementById(options.name);
+      if (el) {
         el.value = options.value;
-    }
-};
+      }
+    };
 
-var json = {
-    questions: [
+    var json = {
+      questions: [
         {
-            type: "checkbox",
-            name: "car",
-            title: "What car are you driving?",
-            isRequired: true,
-            colCount: 4,
-            choices: [
-                "None",
-                "Ford",
-                "Vauxhall",
-                "Volkswagen",
-                "Nissan",
-                "Audi",
-                "Mercedes-Benz",
-                "BMW",
-                "Peugeot",
-                "Toyota",
-                "Citroen"
-            ]
+          type: "checkbox",
+          name: "car",
+          title: "What car are you driving?",
+          isRequired: true,
+          colCount: 4,
+          choices: [
+            "None",
+            "Ford",
+            "Vauxhall",
+            "Volkswagen",
+            "Nissan",
+            "Audi",
+            "Mercedes-Benz",
+            "BMW",
+            "Peugeot",
+            "Toyota",
+            "Citroen"
+          ]
         },
         {
-     type: "radiogroup",
-     name: "price",
-     title: "Do you feel our current price is merited by our product?",
-     choices: [
-      {
-       value: "correct",
-       text: "Yes, the price is about right"
-      },
-      {
-       value: "low",
-       text: "No, the price is too low for your product"
-      },
-      {
-       value: "high",
-       text: "No, the price is too high for your product"
-      }
-     ]
-    }
-    ]
-};
+          type: "radiogroup",
+          name: "price",
+          title: "Do you feel our current price is merited by our product?",
+          choices: [
+            {
+              value: "correct",
+              text: "Yes, the price is about right"
+            },
+            {
+              value: "low",
+              text: "No, the price is too low for your product"
+            },
+            {
+              value: "high",
+              text: "No, the price is too high for your product"
+            }
+          ]
+        }
+      ]
+    };
 
-window.survey = new Survey.Model(json);
+    window.survey = new Survey.Model(json);
 
-survey
-    .onComplete
-    .add(function (result) {
-        document
-            .querySelector('#surveyResult')
-            .innerHTML = "result: " + JSON.stringify(result.data);
+    survey.onComplete.add(function(result) {
+      document.querySelector("#surveyResult").innerHTML =
+        "result: " + JSON.stringify(result.data);
     });
 
-survey.data = {
-    car: ['Ford']
-};
+    survey.data = {
+      car: ["Ford"]
+    };
 
-$("#surveyElement").Survey({model: survey, onValueChanged: surveyValueChanged});
-</script>
+    $("#surveyElement").Survey({
+      model: survey,
+      onValueChanged: surveyValueChanged
+    });
+  </script>
 </html>
