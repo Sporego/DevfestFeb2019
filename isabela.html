@@ -22,6 +22,10 @@
     <!-- Main.css -->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <!-- /Main.css -->
+    <!-- Your platform (jquery) scripts. -->
+
+    <script src="https://surveyjs.azureedge.net/1.0.66/survey.jquery.min.js"></script>
+
   </head>
   <body>
     <!-- Navbar -->
@@ -53,6 +57,9 @@
             <a class="nav-link" href="./filbert.html">Filbert</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="./test.html">Filbert</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="./jonathan.html">Jonathan</a>
           </li>
         </ul>
@@ -62,7 +69,7 @@
     <img
       src="assets/img/follow-yepes.png"
       id="pic"
-      onclick="changeImage(), getinfo()"
+      onclick="changeImage()"
     />
     <script>
       var newsrc = "/assets/img/requested-yepes.png";
@@ -72,6 +79,7 @@
           document.images["pic"].src = "assets/img/requested-yepes.png";
 
           newsrc = "/assets/img/follow-yepes.png";
+          getinfo()
         } else if (newsrc == "/assets/img/follow-yepes.png") {
           document.images["pic"].src = "assets/img/follow-yepes.png";
 
@@ -82,6 +90,8 @@
       function getinfo() {
         var x = prompt("What's your favorite color?");
       }
+
+
     </script>
 
     <!-- comment -->
