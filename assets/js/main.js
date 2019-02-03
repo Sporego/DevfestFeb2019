@@ -18,47 +18,53 @@ var surveyValueChanged = function(sender, options) {
   }
 };
 
+
 var json = {
   questions: [
     {
-      type: "checkbox",
-      name: "car",
-      title: "What car are you driving?",
-      isRequired: true,
-      colCount: 4,
-      choices: [
-        "None",
-        "Ford",
-        "Vauxhall",
-        "Volkswagen",
-        "Nissan",
-        "Audi",
-        "Mercedes-Benz",
-        "BMW",
-        "Peugeot",
-        "Toyota",
-        "Citroen"
-      ]
-    },
+      type:"radiogroup",
+      name:"tickle",
+      title:"If I told you I was ticklish would you tickle me?",
+      choices:[{value:"item1",text:"Yes"},{value:"item2",text:"No"}]},
     {
-      type: "radiogroup",
-      name: "price",
-      title: "Do you feel our current price is merited by our product?",
-      choices: [
-        {
-          value: "correct",
-          text: "Yes, the price is about right"
+      type:"radiogroup",
+      name:"cook",
+      title:"You have friends coming over, what would you cook?",
+      choices:[{value:"item1",text:"Something on the grill"},
+      {value:"item2",
+      text:"Something in the oven"},
+      {value:"item3",
+      text:"Something in the microwave"},
+      {value:"item4",
+      text:"Something on the stove"}
+    ]},
+    {
+      type:"imagepicker",
+      name:"spirit",
+      title:"Spirit Animal",
+      choices:[
+        {value:"charizard",
+        imageLink:"./assets/img/charizard.png"
         },
-        {
-          value: "low",
-          text: "No, the price is too low for your product"
+        {value:"lion",
+        imageLink:"./assets/img/lion.png"
         },
-        {
-          value: "high",
-          text: "No, the price is too high for your product"
+        {value:"sea turtle",
+        imageLink:"./assets/img/sea-turtle.jpg"
+        },
+        {value:"tardigrade",
+        imageLink:"./assets/img/tardigrade.jpg"
         }
-      ]
-    }
+    ]},
+
+    {
+      type:"radiogroup",
+      name:"quote",
+      title:"What quote is BS?",
+      choices:[{value:"correct",text:"\"I wanna live 'till I die, no more, no less.\""},
+      {value:"low",text:"\"If anyone slaps you on the right cheek turn your left cheek also\""},
+      {value:"high",text:"\"Fish meat is practically a vegetable.\""},
+      {value:"item1",text:"\"You can't always get what you want.\""}]},
   ]
 };
 
@@ -69,8 +75,13 @@ survey.onComplete.add(function(result) {
     "result: " + JSON.stringify(result.data);
 });
 
+
+
 survey.data = {
-  car: ["Ford"]
+  tickle: ["skipped"],
+  cook: ["skipped"],
+  spirit: ["skipped"],
+  quote: ["skipped"]
 };
 
 $("#surveyElement").Survey({
