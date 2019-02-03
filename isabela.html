@@ -58,15 +58,30 @@
         </ul>
       </div>
     </nav>
-
+<img src="assets/img/follow-yepes.png" id="pic" onclick="changeImage(), getinfo()"/>
 <<<<<<< HEAD
+        <script>
+        var newsrc = "/assets/img/requested-yepes.png";
 
-      <p style="text-align:center;">
-        <img src="./assets/img/Background.png" alt="me insta" height= 30% width=30%
-        />
-      </p>
+        function changeImage() {
+          if ( newsrc == "/assets/img/requested-yepes.png" ) {
+            document.images["pic"].src = "assets/img/requested-yepes.png";
 
+            newsrc  = "/assets/img/follow-yepes.png";
+          }
+          else if(newsrc=="/assets/img/follow-yepes.png") {
+            document.images["pic"].src = "assets/img/follow-yepes.png";
 
+            newsrc  = "/assets/img/requested-yepes.png";
+          }
+        }
+
+        function getinfo() {
+         var x = prompt("What's your favorite color?");
+        }
+        </script>
+
+<!-- comment -->
 =======
 
 >>>>>>> 4850423a604f586a5357ead7ea033ca93c02ab57
