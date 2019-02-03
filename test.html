@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>
-      Example of setting and getting results into/from the survey, jQuery Survey
-      Library Example
+      The example of showing survey as a popup window, jQuery Survey Library
+      Example
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=30%, initial-scale=1" />
     <script src="https://unpkg.com/jquery"></script>
     <script src="https://surveyjs.azureedge.net/1.0.66/survey.jquery.js"></script>
-    <!-- CSS -->
-    <!-- <link
+    <link
       href="https://surveyjs.azureedge.net/1.0.66/survey.css"
       type="text/css"
       rel="stylesheet"
-    /> -->
+    />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
@@ -23,73 +21,71 @@
 
     <script type="text/javascript" src="./index.js"></script>
   </body>
-
-  <script>
-    var surveyValueChanged = function(sender, options) {
-      var el = document.getElementById(options.name);
-      if (el) {
-        el.value = options.value;
-      }
-    };
-
-    var json = {
-      questions: [
-        {
-          type: "checkbox",
-          name: "car",
-          title: "What car are you driving?",
-          isRequired: true,
-          colCount: 4,
-          choices: [
-            "None",
-            "Ford",
-            "Vauxhall",
-            "Volkswagen",
-            "Nissan",
-            "Audi",
-            "Mercedes-Benz",
-            "BMW",
-            "Peugeot",
-            "Toyota",
-            "Citroen"
-          ]
-        },
-        {
-          type: "radiogroup",
-          name: "price",
-          title: "Do you feel our current price is merited by our product?",
-          choices: [
-            {
-              value: "correct",
-              text: "Yes, the price is about right"
-            },
-            {
-              value: "low",
-              text: "No, the price is too low for your product"
-            },
-            {
-              value: "high",
-              text: "No, the price is too high for your product"
-            }
-          ]
-        }
-      ]
-    };
-
-    window.survey = new Survey.Model(json);
-
-    survey.onComplete.add(function(result) {
-      document.querySelector("#surveyResult").innerHTML =
-        "result: " + JSON.stringify(result.data);
-    });
-
-    survey.data = {
-      car: ["Ford"]
-    };
-
-    $("#surveyElement").Survey({
-      model: survey,
-      onValueChanged: surveyValueChanged
-    });
-  </script>
 </html>
+
+<script>
+  var json = {
+    title: "Please help us to improve our product",
+    pages: [
+      {
+        questions: [
+          {
+            type: "radiogroup",
+            name: "price to competitors",
+            title: "Never have you ever",
+            choices: [
+              "Less expensive",
+              "Priced about the same",
+              "More expensive",
+              "Not sure"
+            ]
+          },
+          {
+            type: "radiogroup",
+            name: "price",
+            title: "Do you feel our current price is merited by our product?",
+            choices: [
+              "correct|Yes, the price is about right",
+              "low|No, the price is too low for your product",
+              "high|No, the price is too high for your product"
+            ]
+          },
+          {
+            type: "multipletext",
+            name: "pricelimit",
+            title: "What is your favorite emoji",
+            items: [
+              {
+                name: "mostamount",
+                title: "Most amount you would every pay for a product like ours"
+              },
+              {
+                name: "leastamount",
+                title: "The least amount you would feel comfortable paying"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        questions: [
+          {
+            type: "text",
+            name: "email",
+            title:
+              "Thank you for taking our survey. Your survey is almost complete, please enter your email address in the box below if you wish to participate in our drawing, then press the 'Submit' button."
+          }
+        ]
+      }
+    ]
+  };
+
+  window.survey = new Survey.Model(json);
+
+  survey.onComplete.add(function(result) {
+    document.querySelector("#surveyResult").innerHTML =
+      "result: " + JSON.stringify(result.data);
+  });
+
+  $("#surveyElement").SurveyWindow({ model: survey, isExpanded: false });
+</script>
