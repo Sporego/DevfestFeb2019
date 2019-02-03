@@ -54,7 +54,6 @@ var json = {
       ]
     },
     {
-<<<<<<< HEAD
       type: "imagepicker",
       name: "spirit",
       title: "Spirit Animal",
@@ -84,7 +83,6 @@ var json = {
         { value: "item1", text: '"You can\'t always get what you want."' }
       ]
     }
-=======
       type:"imagepicker",
       name:"spirit",
       title:"Spirit Animal",
@@ -111,7 +109,6 @@ var json = {
       {value:"item2",text:"\"If anyone slaps you on the right cheek turn your left cheek also.\""},
       {value:"item3",text:"\"Fish meat is practically a vegetable.\""},
       {value:"item4",text:"\"You can't always get what you want.\""}]},
->>>>>>> 5f2e42f5a7af8fabaeab779e255d64130cdf7c20
   ]
 };
 
