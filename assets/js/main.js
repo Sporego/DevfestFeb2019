@@ -109,8 +109,48 @@ var json = {
 window.survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
-  document.querySelector("#surveyResult").innerHTML =
-    "result: " + JSON.stringify(result.data);
+  var res = document.querySelector("#surveyResult");
+  res.setAttribute("style", "display: block");
+
+  //res.append("result: " + JSON.stringify(result.data));
+  if(result.data.tickle == "item1"){
+    var ans1 = "Yes";
+  }  
+  else {
+    var ans1 = "No";
+  }
+  document.querySelector("#q1").append(ans1);
+  if(result.data.cook == "item1"){
+    var ans2 = "Something on the grill";
+  }
+  else if(result.data.cook == "item2"){
+    var ans2 = "Something in the oven";
+  }
+  else if(result.data.cook == "item2"){
+    var ans2 = "Something in the microwave";
+  }
+  else {
+    var ans2 = "Something on the stove"
+  }
+  document.querySelector("#q2").append(ans2);
+  document.querySelector("#q3").append(result.data.spirit);
+  if(result.data.quote == "item1"){
+    var ans3 = '"I wanna live \'till I die, no more, no less."';
+  }
+  else if(result.data.quote == "item2"){
+    var ans3 = '"If anyone slaps you on the right cheek turn your left cheek also."';
+  }
+  else if(result.data.quote == "item3"){
+    var ans3 = '"Fish meat is practically a vegetable."';
+  }
+  else {
+    var ans3 = '"You can\'t always get what you want."';
+  }
+  document.querySelector("#q4").append(ans3);
+
+
+
+  
 });
 
 survey.data = {
