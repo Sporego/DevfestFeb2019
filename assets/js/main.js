@@ -26,11 +26,23 @@ function changeImage2() {
       "http://disneyexaminer.com/wp-content/uploads/2016/11/disney-holiday-season-shopping-black-friday-gift-ideas-2016-star-wars-family-sleepwear-collection-wookie-bb-8-pajamas.jpg";
   }
 }
-function bman() {
+
+function bman1() {
   var x = confirm("Do you mind men cosplaying in latex?");
+
   if (x == true) {
     alert("yes!");
     document.getElementById("bmanid2").src = "./assets/img/batmanMild.jpg";
+    // document.getElementById("bmanid2").onclick = "bman2()";
+    document.querySelector("#bmanid2").setAttribute("onclick", "bman2()");
+  }
+}
+function bman2() {
+  var x = confirm("Doatex?");
+
+  if (x == true) {
+    alert("yes!");
+    document.getElementById("bmanid2").src = "./assets/img/batmanSpicy.jpg";
   }
 }
 
