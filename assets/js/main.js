@@ -30,7 +30,7 @@ function bman() {
   var x = prompt("Do you mind men cosplaying in latex?");
   if (x == "not at all") {
     alert("yes!");
-    document.getElementById("bman2").src = "assetsimg\batmanMild.jpg";
+    document.getElementById("bmanid2").src = "./assets/img/batmanMild.jpg";
   }
 }
 
