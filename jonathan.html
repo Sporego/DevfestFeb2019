@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Woke Jonathan</title>
+    <title>Woke Filbert</title>
     <!-- Normalize -->
     <link
       rel="stylesheet"
@@ -22,6 +22,12 @@
     <!-- Main.css -->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <!-- /Main.css -->
+    <!-- Font Instagram -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+      rel="stylesheet"
+    />
+    <!-- /Font Instagram -->
   </head>
   <body>
     <!-- Navbar -->
@@ -47,543 +53,226 @@
           <li class="nav-item">
             <a class="nav-link" href="./isabela.html">Isabela</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./filbert.html">Filbert</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="./filbert.html"
+              >Filbert <span class="sr-only">(current)</span></a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="./jonathan.html"
-              >Jonathan <span class="sr-only">(current)</span></a
-            >
+            <a class="nav-link" href="./jonathan.html">Jonathan</a>
           </li>
         </ul>
       </div>
     </nav>
-    <!-- Begin -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="page-header">
-            <h1>Never have you ever...</h1>
-          </div>
+    <!-- Instagram NAVBAR -->
+    <div id="app" class="container-fluid">
+      <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <a class="navbar-brand instaBar" href="./filbert.html">
+          <img src="./assets/img/insta.svg" width="30" height="30" alt="" />
+          | Instagram
+        </a>
+
+        </button>
+          <form class="form-inline my-2 my-lg-0 mx-auto">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+          <ul class="navbar-nav">
+            <button type="button" class="btn btn-primary my-2 my-lg-0">
+              Log In
+            </button>
+            <button type="button" class="btn btn-link">Sign Up</button>
+          </ul>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-1">
-              <div class="btn-group" role="group">
-                <button class="btn btn-secondary" type="button">
-                  Center
-                </button>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <!DOCTYPE html>
-              <html>
-                <head>
-                  <title>
-                    The example of showing survey as a popup window, jQuery
-                    Survey Library Example
-                  </title>
-                  <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                  />
-
-                  <script src="https://unpkg.com/jquery">
-                    <a href="http://www.google.com" target="_self">google</a>
-                  </script>
-                  <script src="https://surveyjs.azureedge.net/1.0.66/survey.jquery.js"></script>
-                  <link
-                    href="https://surveyjs.azureedge.net/1.0.66/survey.css"
-                    type="text/css"
-                    rel="stylesheet"
-                  />
-                  <link rel="stylesheet" href="./index.css" />
-                </head>
-                <body>
-                  <div id="surveyElement"></div>
-                  <div id="surveyResult"></div>
-
-                  <script type="text/javascript" src="./index.js"></script>
-                </body>
-              </html>
-
-              <script>
-                var json = {
-                  title: "Please help us to improve our product",
-                  pages: [
-                    {
-                      questions: [
-                        {
-                          type: "matrix",
-                          name: "Quality",
-                          title:
-                            "Please indicate if you agree or disagree with the following statements",
-                          columns: [
-                            {
-                              value: 1,
-                              text: "Strongly Disagree"
-                            },
-                            {
-                              value: 2,
-                              text: "Disagree"
-                            },
-                            {
-                              value: 3,
-                              text: "Neutral"
-                            },
-                            {
-                              value: 4,
-                              text: "Agree"
-                            },
-                            {
-                              value: 5,
-                              text: "Strongly Agree"
-                            }
-                          ],
-                          rows: [
-                            {
-                              value: "affordable",
-                              text: "Product is affordable"
-                            },
-                            {
-                              value: "does what it claims",
-                              text: "Product does what it claims"
-                            },
-                            {
-                              value: "better then others",
-                              text:
-                                "Product is better than other products on the market"
-                            },
-                            {
-                              value: "easy to use",
-                              text: "Product is easy to use"
-                            }
-                          ]
-                        },
-                        {
-                          type: "rating",
-                          name: "satisfaction",
-                          title: "How satisfied are you with the Product?",
-                          mininumRateDescription: "Not Satisfied",
-                          maximumRateDescription: "Completely satisfied"
-                        },
-                        {
-                          type: "rating",
-                          name: "recommend friends",
-                          visibleIf: "{satisfaction} > 3",
-                          title:
-                            "How likely are you to recommend the Product to a friend or co-worker?",
-                          mininumRateDescription: "Will not recommend",
-                          maximumRateDescription: "I will recommend"
-                        },
-                        {
-                          type: "comment",
-                          name: "suggestions",
-                          title:
-                            "What would make you more satisfied with the Product?"
-                        }
-                      ]
-                    },
-                    {
-                      questions: [
-                        {
-                          type: "radiogroup",
-                          name: "price to competitors",
-                          title:
-                            "Compared to our competitors, do you feel the Product is",
-                          choices: [
-                            "Less expensive",
-                            "Priced about the same",
-                            "More expensive",
-                            "Not sure"
-                          ]
-                        },
-                        {
-                          type: "radiogroup",
-                          name: "price",
-                          title:
-                            "Do you feel our current price is merited by our product?",
-                          choices: [
-                            "correct|Yes, the price is about right",
-                            "low|No, the price is too low for your product",
-                            "high|No, the price is too high for your product"
-                          ]
-                        },
-                        {
-                          type: "multipletext",
-                          name: "pricelimit",
-                          title: "What is the... ",
-                          items: [
-                            {
-                              name: "mostamount",
-                              title:
-                                "Most amount you would every pay for a product like ours"
-                            },
-                            {
-                              name: "leastamount",
-                              title:
-                                "The least amount you would feel comfortable paying"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      questions: [
-                        {
-                          type: "text",
-                          name: "email",
-                          title:
-                            "Thank you for taking our survey. Your survey is almost complete, please enter your email address in the box below if you wish to participate in our drawing, then press the 'Submit' button."
-                        }
-                      ]
-                    }
-                  ]
-                };
-
-                window.survey = new Survey.Model(json);
-
-                survey.onComplete.add(function(result) {
-                  document.querySelector("#surveyResult").innerHTML =
-                    "result: " + JSON.stringify(result.data);
-                });
-
-                $("#surveyElement").SurveyWindow({
-                  model: survey,
-                  isExpanded: false
-                });
-              </script>
-            </div>
-            <div class="col-md-1">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/face-with-monocle.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://i0.wp.com/www.papertraildesign.com/wp-content/uploads/2017/06/Heart-eyes.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://gjalvi.files.wordpress.com/2015/09/favorite-emoji-choice-side-eye.jpg"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://clipart.info/images/ccovers/1496184261New-Tears-of-Joy-Emoji-Png-transparent-background.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-1"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-1">
-              <div class="btn-group" role="group">
-                <button class="btn btn-secondary" type="button">
-                  Center
-                </button>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <h2>
-                Gone skinny dipping.
-              </h2>
-            </div>
-            <div class="col-md-1">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/face-with-monocle.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://i0.wp.com/www.papertraildesign.com/wp-content/uploads/2017/06/Heart-eyes.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://gjalvi.files.wordpress.com/2015/09/favorite-emoji-choice-side-eye.jpg"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://clipart.info/images/ccovers/1496184261New-Tears-of-Joy-Emoji-Png-transparent-background.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-1"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-1">
-              <div class="btn-group" role="group">
-                <button class="btn btn-secondary" type="button">
-                  Center
-                </button>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <h2>
-                Poo'ed my pants.
-              </h2>
-            </div>
-            <div class="col-md-1">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/face-with-monocle.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://i0.wp.com/www.papertraildesign.com/wp-content/uploads/2017/06/Heart-eyes.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://gjalvi.files.wordpress.com/2015/09/favorite-emoji-choice-side-eye.jpg"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://clipart.info/images/ccovers/1496184261New-Tears-of-Joy-Emoji-Png-transparent-background.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-1"></div>
-          </div>
-          <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-1">
-              <div class="btn-group" role="group">
-                <button class="btn btn-secondary" type="button">
-                  Center
-                </button>
-              </div>
-            </div>
-            <div class="col-md-8">
-              <h2>
-                Cried laughing.
-              </h2>
-            </div>
-            <div class="col-md-1">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/face-with-monocle.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://i0.wp.com/www.papertraildesign.com/wp-content/uploads/2017/06/Heart-eyes.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://gjalvi.files.wordpress.com/2015/09/favorite-emoji-choice-side-eye.jpg"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="media">
-                        <img
-                          class="mr-3"
-                          alt="Bootstrap Media Preview"
-                          src="https://clipart.info/images/ccovers/1496184261New-Tears-of-Joy-Emoji-Png-transparent-background.png"
-                          alt=""
-                          width="50px"
-                          height="50px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-1"></div>
-          </div>
-          <nav>
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#">Previous</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">3</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">4</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">5</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+      </nav>
     </div>
-    <!-- /Begin -->
+        <!-- /Instagram NAVBAR -->
+        <!-- Main -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <img src="./assets/img/isabela.jpg" class="rounded-circle mx-auto d-block avatarCrop mx-auto" alt="Human Face">
+            </div>
+            <div class="col-lg-6">
+              <div class="card" style="width: 36rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">bela.yepes
+                    <button onclick="houdini()" type="button" class="btn btn-primary my-2 my-lg-0"  >
+                      Follow*
+                    </button>
+                  </li>
+                  <li class="list-group-item"> <b>147</b> posts    <b>665</b> followers    <b>787</b> following</li>
+                  <li class="list-group-item"><b>Isabela</b> - Columbia '22</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3"></div>
+          </div>
+
+          <br>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card" id="effortFilter">
+                  <div class="card-body">
+                      <div id="surveyElement"></div>
+                      <div id="surveyResult">
+                        <table>
+                          <tr>
+                            <th> </th>
+                            <th>Your answers</th>
+                            <th>Their answers</th>
+                          </tr>
+                          <tr>
+                            <td>Question 1</td>
+                        </table>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+
+          <br>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                  <div class="row">
+                      <div class="col-md-3">
+                        <div class="media">
+                          <img
+                            class="mr-4"
+                            alt="Bootstrap Media Preview"
+                            src="https://i.pinimg.com/736x/a2/14/ba/a214ba13268d83b69316edd96a06a08b.jpg"
+                            alt=""
+                            width="200px"
+                            height="200px"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="media">
+                          <img
+                            class="mr-3"
+                            alt="Bootstrap Media Preview"
+                            src="https://i.pinimg.com/736x/cf/e6/0e/cfe60e692155b363661fd7ad87bd7939.jpg"
+                            alt=""
+                            width="200px"
+                            height="200px"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="media">
+                            <img
+                              class="mr-3"
+                              alt="Bootstrap Media Preview"
+                              src="http://www.amazingperu.com/peru/images/luxury-tours-peru/ballestas-islands-luxury-tour.gif"
+                              alt=""
+                              width="200px"
+                              height="200px"
+                            />
+                          </div>
+                        </div>
+                    </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                        <div class="media">
+                          <img
+                            id="imgClickAndChange" onclick="changeImage()"
+                            class="mr-4"
+                            alt="Bootstrap Media Preview"
+                            src="https://conceptdraw.com/a1723c3/p4/preview/640/pict--lock-cybersecurity---vector-stencils-library.png--diagram-flowchart-example.png"                  
+                            alt=""
+                            width="200px"
+                            height="200px"
+                              
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="media">
+                          <img
+                            id="imgClickAndChange2" onclick="changeImage2()"
+                            class="mr-3"
+                            alt="Bootstrap Media Preview"
+                            src="https://conceptdraw.com/a1723c3/p4/preview/640/pict--lock-cybersecurity---vector-stencils-library.png--diagram-flowchart-example.png"
+                            alt=""
+                            width="200px"
+                            height="200px"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="media">
+                            <img
+                              class="mr-3"
+                              alt="Bootstrap Media Preview"
+                              src="http://www.dronestagr.am/wp-content/uploads/2016/12/verdonDJI_005820161212-HDR-Pano-Edit-991x1024.jpg"
+                              alt=""
+                              width="200px"
+                              height="200px"
+                            />
+                          </div>
+                        </div>
+                    </div> 
+                  <div class="row">
+                      <div class="col-md-3">
+                        <div class="media">
+                          <img
+                            class="mr-4"
+                            alt="Bootstrap Media Preview"
+                            src="https://i.pinimg.com/736x/a2/14/ba/a214ba13268d83b69316edd96a06a08b.jpg"
+                            alt=""
+                            width="200px"
+                            height="200px"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="media">
+                          <img
+                            class="mr-3"
+                            alt="Bootstrap Media Preview"
+                            src="http://www.environment.sa.gov.au/files/content/good_living/posts/2017/07/cuttlefish/cuttlefish_-_first_crop_8.jpg"
+                            alt=""
+                            width="200px"
+                            height="200px"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="media">
+                            <img
+                              class="mr-3"
+                              alt="Bootstrap Media Preview"
+                              src="http://www.amazingperu.com/peru/images/luxury-tours-peru/ballestas-islands-luxury-tour.gif"
+                              alt=""
+                              width="200px"
+                              height="200px"
+                            />
+                          </div>
+                        </div>
+                    </div>           
+                 </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Main -->
+
+        <!-- Footer -->
+        <nav class="navbar fixed-bottom navbar-light bg-faded">
+          <a class="navbar-brand" href="#">© 2019 devfe.st</a>
+        </nav>
+        <!-- /Footer -->
 
     <!-- JS Initial Block -->
     <script
@@ -602,6 +291,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- /JS Initial Block -->
+    <!-- Survey js -->
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://surveyjs.azureedge.net/1.0.66/survey.jquery.js"></script>
+    <!-- /Survey js -->
     <!-- js -->
     <script src="./assets/js/main.js"></script>
     <!-- /js -->
