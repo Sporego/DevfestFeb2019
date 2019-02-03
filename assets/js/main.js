@@ -27,8 +27,8 @@ function changeImage2() {
   }
 }
 function bman() {
-  var x = prompt("Do you mind men cosplaying in latex?");
-  if (x == "not at all") {
+  var x = confirm("Do you mind men cosplaying in latex?");
+  if (x == true) {
     alert("yes!");
     document.getElementById("bmanid2").src = "./assets/img/batmanMild.jpg";
   }
