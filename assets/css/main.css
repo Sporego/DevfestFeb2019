@@ -21,3 +21,7 @@ body {
   display: none;
   width: auto;
 }
+
+#surveyResult {
+  font-family: "Open Sans", sans-serif;
+}
