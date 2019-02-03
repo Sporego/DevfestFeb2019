@@ -51,107 +51,82 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html">Index</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="./isabela.html"
-              >Isabela <span class="sr-only">(current)</span></a
-            >
+            <a class="nav-link active" href="./isabela.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./filbert.html">Filbert</a>
+            <a class="nav-link" href="./filbert.html"
+              >Instagram </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./test.html">Test</a>
+            <a class="nav-link" href="./index.html">Blind Date</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./jonathan.html">Jonathan</a>
+          <li class="nav-item">
+            <a class="nav-link" href="./jonathan.html">BFFL Unlock</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div id="surveyElement"></div>
-    <div id="surveyResult"></div>
 
-<script type="text/javascript" src="./index.js"></script>
-
-    <img
-      src="assets/img/follow-yepes.png"
-      id="pic"
-      onclick="changeImage()"
-    />
-    <script>
-    var json = {
-        title: "Please help us to improve our product",
-        pages: [
-     {
-                questions: [
-                    {
-                        type: "radiogroup",
-                        name: "price to competitors",
-                        title: "Compared to our competitors, do you feel the Product is",
-                        choices: ["Less expensive", "Priced about the same", "More expensive", "Not sure"]
-                    }, {
-                        type: "multipletext",
-                        name: "pricelimit",
-                        title: "What is your favorite hobby?",
-                        items: [
-                            {
-                                name: "mostamount",
-                                title: "Most amount you would every pay for a product like ours"
-                            }, {
-                                name: "leastamount",
-                                title: "The least amount you would feel comfortable paying"
-                            }
-                        ]
-                    }
-                ]
-            }, {
-                questions: [
-                    {
-                        type: "text",
-                        name: "email",
-                        title: "Thank you for taking our survey. Your survey is almost complete, please enter your email address in the box below if you wish to participate in our drawing, then press the 'Submit' button."
-                    }
-                ]
-            }
-        ]
-    };
-
-
-
-
-      var newsrc = "assets/img/requested-yepes.png";
-
-      function changeImage() {
-        if (newsrc == "assets/img/requested-yepes.png") {
-          document.images["pic"].src = "assets/img/requested-yepes.png";
-          getinfo()
-          newsrc = "assets/img/follow-yepes.png";
-
-        } else if (newsrc == "assets/img/follow-yepes.png") {
-          document.images["pic"].src = "assets/img/follow-yepes.png";
-
-          newsrc = "assets/img/requested-yepes.png";
-        }
-      }
-
-      function getinfo() {
-        window.survey = new Survey.Model(json);
-        survey
-            .onComplete
-            .add(function (result) {
-                document
-                    .querySelector('#surveyResult')
-                    .innerHTML = "result: " + JSON.stringify(result.data);
-            });
-        $("#surveyElement").SurveyWindow({model: survey, isExpanded: true});
-      }
-
-
-    </script>
+    <div>
+      <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" alt="Bootstrap Thumbnail First" src="https://www.layoutit.com/img/people-q-c-600-200-1.jpg" />
+						<div class="card-block">
+							<h5 class="card-title">
+								Card title
+							</h5>
+							<p class="card-text">
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" alt="Bootstrap Thumbnail Second" src="https://www.layoutit.com/img/city-q-c-600-200-1.jpg" />
+						<div class="card-block">
+							<h5 class="card-title">
+								Card title
+							</h5>
+							<p class="card-text">
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" alt="Bootstrap Thumbnail Third" src="https://www.layoutit.com/img/sports-q-c-600-200-1.jpg" />
+						<div class="card-block">
+							<h5 class="card-title">
+								Card title
+							</h5>
+							<p class="card-text">
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#index.html">Action</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    </div>
 
     <!-- comment -->
 
