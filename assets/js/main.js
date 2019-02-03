@@ -33,7 +33,7 @@ function bman1() {
   if (x == true) {
     document.getElementById("bmanid2").src = "./assets/img/batmanMild.jpg";
     // document.getElementById("bmanid2").onclick = "bman2()";
-    document.querySelector("#bmanid2").setAttribute("onclick", "bman2()");
+    document.querySelector("#b").setAttribute("onclick", "bman2()");
   }
 }
 function bman2() {
