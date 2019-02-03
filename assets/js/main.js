@@ -8,7 +8,7 @@ function houdini() {
   } else {
     x.style.display = "none";
   }
-}
+} 
 
 function changeImage() {
   var x = prompt("This is a family photo: What's the key fam?");
@@ -54,6 +54,7 @@ var json = {
       ]
     },
     {
+<<<<<<< HEAD
       type: "imagepicker",
       name: "spirit",
       title: "Spirit Animal",
@@ -83,14 +84,82 @@ var json = {
         { value: "item1", text: '"You can\'t always get what you want."' }
       ]
     }
+=======
+      type:"imagepicker",
+      name:"spirit",
+      title:"Spirit Animal",
+      choices:[
+        {value:"Charizard",
+        imageLink:"./assets/img/charizard.png"
+        },
+        {value:"Lion",
+        imageLink:"./assets/img/lion.png"
+        },
+        {value:"Sea turtle",
+        imageLink:"./assets/img/sea-turtle.jpg"
+        },
+        {value:"Tardigrade",
+        imageLink:"./assets/img/tardigrade.jpg"
+        }
+    ]},
+
+    {
+      type:"radiogroup",
+      name:"quote",
+      title:"What quote is BS?",
+      choices:[{value:"item1",text:"\"I wanna live 'till I die, no more, no less.\""},
+      {value:"item2",text:"\"If anyone slaps you on the right cheek turn your left cheek also.\""},
+      {value:"item3",text:"\"Fish meat is practically a vegetable.\""},
+      {value:"item4",text:"\"You can't always get what you want.\""}]},
+>>>>>>> 5f2e42f5a7af8fabaeab779e255d64130cdf7c20
   ]
 };
 
 window.survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
-  document.querySelector("#surveyResult").innerHTML =
-    "result: " + JSON.stringify(result.data);
+  var res = document.querySelector("#surveyResult");
+  res.setAttribute("style", "display: block");
+
+  //res.append("result: " + JSON.stringify(result.data));
+  if(result.data.tickle == "item1"){
+    var ans1 = "Yes";
+  }  
+  else {
+    var ans1 = "No";
+  }
+  document.querySelector("#q1").append(ans1);
+  if(result.data.cook == "item1"){
+    var ans2 = "Something on the grill";
+  }
+  else if(result.data.cook == "item2"){
+    var ans2 = "Something in the oven";
+  }
+  else if(result.data.cook == "item2"){
+    var ans2 = "Something in the microwave";
+  }
+  else {
+    var ans2 = "Something on the stove"
+  }
+  document.querySelector("#q2").append(ans2);
+  document.querySelector("#q3").append(result.data.spirit);
+  if(result.data.quote == "item1"){
+    var ans3 = '"I wanna live \'till I die, no more, no less."';
+  }
+  else if(result.data.quote == "item2"){
+    var ans3 = '"If anyone slaps you on the right cheek turn your left cheek also."';
+  }
+  else if(result.data.quote == "item3"){
+    var ans3 = '"Fish meat is practically a vegetable."';
+  }
+  else {
+    var ans3 = '"You can\'t always get what you want."';
+  }
+  document.querySelector("#q4").append(ans3);
+
+
+
+  
 });
 
 survey.data = {
