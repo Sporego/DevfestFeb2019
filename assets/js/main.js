@@ -28,20 +28,18 @@ function changeImage2() {
 }
 
 function bman1() {
-  var x = confirm("Do you mind men cosplaying in latex?");
+  var x = confirm("You ok with men cosplaying in latex?");
 
   if (x == true) {
-    alert("yes!");
     document.getElementById("bmanid2").src = "./assets/img/batmanMild.jpg";
     // document.getElementById("bmanid2").onclick = "bman2()";
     document.querySelector("#bmanid2").setAttribute("onclick", "bman2()");
   }
 }
 function bman2() {
-  var x = confirm("Doatex?");
+  var x = confirm("Keeping secrets is essential?");
 
   if (x == true) {
-    alert("yes!");
     document.getElementById("bmanid2").src = "./assets/img/batmanSpicy.jpg";
   }
 }
