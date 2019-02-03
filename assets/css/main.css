@@ -7,3 +7,12 @@
   height: 150px;
   width: auto;
 }
+
+#app {
+  border-bottom: 0.125em solid lightgray;
+  margin-bottom: 3em;
+}
+
+body {
+  background-color: #fafafa;
+}
