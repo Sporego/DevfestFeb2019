@@ -26,7 +26,7 @@
   <body>
     <!-- Navbar -->
     <!-- https://getbootstrap.com/docs/4.2/components/navbar/#color-schemes -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Woke Filbert</a>
       <button
         class="navbar-toggler"
@@ -58,6 +58,40 @@
         </ul>
       </div>
     </nav>
+    <!-- Nav -->
+    <nav
+      class="navbar navbar-dark bg-dark"
+      style="background-color: hsl(29, 100%, 50%);"
+    >
+      <a class="navbar-brand" href="#">
+        <img
+          src="./assets/img/B.svg"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        lind Date
+      </a>
+
+      <form class="form-inline my-2 my-lg-0 mx-auto">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+      <ul class="navbar-nav">
+        <button type="button" class="btn btn-primary my-2 my-lg-0">
+          Log In
+        </button>
+      </ul>
+    </nav>
+    <!-- /Nav -->
 
     <!-- Blind Date -->
 
@@ -77,7 +111,7 @@
               <p class="card-text">
                 I'm batman
               </p>
-              <a href="#" class="btn btn-primary">message</a>
+              <a href="#" class="btn btn-primary">Message</a>
             </div>
           </div>
         </div>
@@ -85,6 +119,12 @@
     </div>
 
     <!-- /Blind Date -->
+
+    <!-- Footer -->
+    <nav class="navbar fixed-bottom navbar-light bg-faded">
+      <a class="navbar-brand" href="#">© 2019 devfe.st</a>
+    </nav>
+    <!-- /Footer -->
 
     <!-- JS Initial Block -->
     <script
