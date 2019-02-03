@@ -8,8 +8,23 @@ function houdini() {
   } else {
     x.style.display = "none";
   }
-} 
-
+}
+function changeImage() {
+  var x = prompt("This is a family photo: What's the key fam?");
+  if (x == "correct") {
+    alert("yes!");
+    document.getElementById("imgClickAndChange").src =
+      "https://i.pinimg.com/originals/61/1b/10/611b102fa975e0b92ac762d241efb947.jpg";
+  }
+}
+function changeImage2() {
+  var x = prompt("This is a family photo: What's the key fam?");
+  if (x == "correct") {
+    alert("yes!");
+    document.getElementById("imgClickAndChange2").src =
+      "http://disneyexaminer.com/wp-content/uploads/2016/11/disney-holiday-season-shopping-black-friday-gift-ideas-2016-star-wars-family-sleepwear-collection-wookie-bb-8-pajamas.jpg";
+  }
+}
 //
 var surveyValueChanged = function(sender, options) {
   var el = document.getElementById(options.name);
@@ -18,53 +33,55 @@ var surveyValueChanged = function(sender, options) {
   }
 };
 
-
 var json = {
   questions: [
     {
-      type:"radiogroup",
-      name:"tickle",
-      title:"If I told you I was ticklish would you tickle me?",
-      choices:[{value:"item1",text:"Yes"},{value:"item2",text:"No"}]},
+      type: "radiogroup",
+      name: "tickle",
+      title: "If I told you I was ticklish would you tickle me?",
+      choices: [{ value: "item1", text: "Yes" }, { value: "item2", text: "No" }]
+    },
     {
-      type:"radiogroup",
-      name:"cook",
-      title:"You have friends coming over, what would you cook?",
-      choices:[{value:"item1",text:"Something on the grill"},
-      {value:"item2",
-      text:"Something in the oven"},
-      {value:"item3",
-      text:"Something in the microwave"},
-      {value:"item4",
-      text:"Something on the stove"}
-    ]},
+      type: "radiogroup",
+      name: "cook",
+      title: "You have friends coming over, what would you cook?",
+      choices: [
+        { value: "item1", text: "Something on the grill" },
+        { value: "item2", text: "Something in the oven" },
+        { value: "item3", text: "Something in the microwave" },
+        { value: "item4", text: "Something on the stove" }
+      ]
+    },
     {
-      type:"imagepicker",
-      name:"spirit",
-      title:"Spirit Animal",
-      choices:[
-        {value:"Charizard",
-        imageLink:"./assets/img/charizard.png"
-        },
-        {value:"Lion",
-        imageLink:"./assets/img/lion.png"
-        },
-        {value:"Sea turtle",
-        imageLink:"./assets/img/sea-turtle.jpg"
-        },
-        {value:"Tardigrade",
-        imageLink:"./assets/img/tardigrade.jpg"
-        }
-    ]},
+      type: "imagepicker",
+      name: "spirit",
+      title: "Spirit Animal",
+      choices: [
+        { value: "Charizard", imageLink: "./assets/img/charizard.png" },
+        { value: "Lion", imageLink: "./assets/img/lion.png" },
+        { value: "Sea turtle", imageLink: "./assets/img/sea-turtle.jpg" },
+        { value: "Tardigrade", imageLink: "./assets/img/tardigrade.jpg" }
+      ]
+    },
 
     {
-      type:"radiogroup",
-      name:"quote",
-      title:"What quote is BS?",
-      choices:[{value:"item1",text:"\"I wanna live 'till I die, no more, no less.\""},
-      {value:"item2",text:"\"If anyone slaps you on the right cheek turn your left cheek also.\""},
-      {value:"item3",text:"\"Fish meat is practically a vegetable.\""},
-      {value:"item4",text:"\"You can't always get what you want.\""}]},
+      type: "radiogroup",
+      name: "quote",
+      title: "What quote is BS?",
+      choices: [
+        {
+          value: "item1",
+          text: '"I wanna live \'till I die, no more, no less."'
+        },
+        {
+          value: "item2",
+          text:
+            '"If anyone slaps you on the right cheek turn your left cheek also."'
+        },
+        { value: "item3", text: '"Fish meat is practically a vegetable."' },
+        { value: "item4", text: '"You can\'t always get what you want."' }
+      ]
+    }
   ]
 };
 
@@ -75,44 +92,34 @@ survey.onComplete.add(function(result) {
   res.setAttribute("style", "display: block");
 
   //res.append("result: " + JSON.stringify(result.data));
-  if(result.data.tickle == "item1"){
+  if (result.data.tickle == "item1") {
     var ans1 = "Yes";
-  }  
-  else {
+  } else {
     var ans1 = "No";
   }
   document.querySelector("#q1").append(ans1);
-  if(result.data.cook == "item1"){
+  if (result.data.cook == "item1") {
     var ans2 = "Something on the grill";
-  }
-  else if(result.data.cook == "item2"){
+  } else if (result.data.cook == "item2") {
     var ans2 = "Something in the oven";
-  }
-  else if(result.data.cook == "item2"){
+  } else if (result.data.cook == "item2") {
     var ans2 = "Something in the microwave";
-  }
-  else {
-    var ans2 = "Something on the stove"
+  } else {
+    var ans2 = "Something on the stove";
   }
   document.querySelector("#q2").append(ans2);
   document.querySelector("#q3").append(result.data.spirit);
-  if(result.data.quote == "item1"){
+  if (result.data.quote == "item1") {
     var ans3 = '"I wanna live \'till I die, no more, no less."';
-  }
-  else if(result.data.quote == "item2"){
-    var ans3 = '"If anyone slaps you on the right cheek turn your left cheek also."';
-  }
-  else if(result.data.quote == "item3"){
+  } else if (result.data.quote == "item2") {
+    var ans3 =
+      '"If anyone slaps you on the right cheek turn your left cheek also."';
+  } else if (result.data.quote == "item3") {
     var ans3 = '"Fish meat is practically a vegetable."';
-  }
-  else {
+  } else {
     var ans3 = '"You can\'t always get what you want."';
   }
   document.querySelector("#q4").append(ans3);
-
-
-
-  
 });
 
 survey.data = {
