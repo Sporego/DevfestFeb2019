@@ -75,8 +75,6 @@ survey.onComplete.add(function(result) {
     "result: " + JSON.stringify(result.data);
 });
 
-
-
 survey.data = {
   tickle: ["skipped"],
   cook: ["skipped"],
