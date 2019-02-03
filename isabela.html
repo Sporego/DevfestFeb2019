@@ -58,6 +58,7 @@
         </ul>
       </div>
     </nav>
+    <<<<<<< HEAD
 
     <div class="container">
       <p style="text-align:center;">
@@ -100,6 +101,32 @@
         background-color: black;
       }
     </style>
+    <img
+      src="assets/img/follow-yepes.png"
+      id="pic"
+      onclick="changeImage(), getinfo()"
+    />
+    <script>
+      var newsrc = "/assets/img/requested-yepes.png";
+
+      function changeImage() {
+        if (newsrc == "/assets/img/requested-yepes.png") {
+          document.images["pic"].src = "assets/img/requested-yepes.png";
+
+          newsrc = "/assets/img/follow-yepes.png";
+        } else if (newsrc == "/assets/img/follow-yepes.png") {
+          document.images["pic"].src = "assets/img/follow-yepes.png";
+
+          newsrc = "/assets/img/requested-yepes.png";
+        }
+      }
+
+      function getinfo() {
+        var x = prompt("What's your favorite color?");
+      }
+    </script>
+
+    <!-- comment -->
 
     <!-- JS Initial Block -->
     <script
