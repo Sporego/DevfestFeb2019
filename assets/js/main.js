@@ -71,14 +71,19 @@ var json = {
 window.survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
-  var table = $("<table>");
-  var headrow = $("<tr>").html("<th>Your answers</th><th>Their answers</th>");
-  table.append(headrow);
+  var res = document.querySelector("#surveyResult");
+  res.setAttribute("style", "display: block");
 
-  var row2 = $("<tr>").html("<td>"+result[0].choices.text+"</td>");
+  //res.append("result: " + JSON.stringify(result.data));
+    
+  document.querySelector("#q1").append(result.data.tickle);
+  document.querySelector("#q2").append(result.data.cook);
+  document.querySelector("#q3").append(result.data.spirit);
+  document.querySelector("#q4").append(result.data.quote);
 
-  document.querySelector("#surveyResult").append =
-    "result: " + JSON.stringify(result.data);
+
+
+  
 });
 
 survey.data = {
